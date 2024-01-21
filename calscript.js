@@ -7,6 +7,11 @@ const dividebtn = document.querySelector(".divide");
 const multibtn = document.querySelector(".multiply");
 const equals = document.querySelector(".equal");
 
+let firstVal = "";
+let secondVal = "";
+let operatorval = "";
+
+
 
 
 
@@ -27,36 +32,63 @@ function divide(a, b){
 }
 
 //main function of the programm;
-function operator(firstNum, secondNum, operator){
-    if(operator === "+"){
-        return add(firstNum, secondNum);
+function operator(firstNum, operator, secondNum){
+    switch(operator){
+        case "+":
+            return add(firstNum, secondNum)
+            break;
+        case "-":
+            return subtract(firstNum, secondNum)
+            break;
+        case "*":
+            return multiply(firstNum, secondNum)
+            break;
+        case "/":
+            return divide(firstNum, secondNum)
+            break;
     }
-    else if(operator === "-"){
-        return subtract(firstNum, secondNum);
-    }
-    else if(operator === "*"){
-        return multiply(firstNum, secondNum);
-    }
-    else if(operator === "/"){
-        return divide(firstNum, secondNum);
-    }
+
 }
 
 
 
-let currentInput = "";
 
+//dislays the first value for calculation
 for(let i=0; i < nums.length; i++){
     nums[i].addEventListener('click', function(){
-        currentInput += this.textContent;
+        if(operatorval === ""){
+            firstVal += this.textContent;
+        }else{
+            secondVal += this.textContent;
+        } 
         display();
-        console.log(this)
+        
     })
 }
 
 function display(){
     const screen = document.querySelector("#screen");
-    screen.textContent = currentInput;        
+    screen.textContent = operatorval === "" ? firstVal : secondVal;       
 }
+
+addbtn.addEventListener("click", function(){
+    operatorval = addbtn.textContent;
+
+
+})
+
+subbtn.addEventListener("click", function(){
+    operatorval = subbtn.textContent;
+})
+
+multibtn.addEventListener("click", function(){
+    operatorval = multibtn.textContent;
+})
+
+dividebtn.addEventListener("click", function(){
+    operatorval = dividebtn.textContent;
+})
+
+
 
 
