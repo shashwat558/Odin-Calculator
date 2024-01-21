@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;  
+    background-color: rgb(255, 255, 255);  
+}
+
+.first-row {
+    display: flex;
+    
+}
+.btn {
+    height: 75px;
+    width: 75px;
+    margin: 10px;
+    font-size: 40px;   
+}
+
+.num {
+    border: 2px solid purple;
+    border-radius: 10px;
+
+}
+
+.add, .substract, .multiply, .divide, .equal {
+    border: 2px solid orangered;
+}
+
+.decimal {
+    border: 2px solid green
+}
+
+.clrbtn {
+    border: 2px solid black;
+}
+
+#screen {
+    width: 295px;
+    height: 50px;
+    margin-bottom: 0;
+    font-size: 40px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    
+}
+
+.num:hover {
+    background-color: rgb(38, 224, 199);
+}
+.add:hover{
+    background-color: rgb(130, 238, 144)
+}
+.substract:hover{
+    background-color: rgb(130, 238, 144)
+}
+.multiply:hover{
+    background-color: rgb(130, 238, 144)
+}
+.equal:hover{
+    background-color: rgb(130, 238, 144)
+}
+.divide:hover{
+    background-color: rgb(130, 238, 144)
+}
