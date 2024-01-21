@@ -6,6 +6,7 @@ const subbtn = document.querySelector(".substract");
 const dividebtn = document.querySelector(".divide");
 const multibtn = document.querySelector(".multiply");
 const equals = document.querySelector(".equal");
+const clrbtn = document.querySelector(".clrbtn");
 
 let firstVal = "";
 let secondVal = "";
@@ -89,6 +90,21 @@ dividebtn.addEventListener("click", function(){
     operatorval = dividebtn.textContent;
 })
 
+equals.addEventListener("click", function () {
+    if (firstVal !== "" && secondVal !== "" && operatorval !== "") {
+        let result = operator(parseFloat(firstVal), operatorval, parseFloat(secondVal));
+        firstVal = result.toString();
+        secondVal = "";
+        operatorval = "";
+        display();
+    }
+});
 
 
+clrbtn.addEventListener("click", function(){
+    firstVal = "";
+    secondVal = "";
+    operatorval = "";
+    display();
+})
 
